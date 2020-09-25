@@ -1,5 +1,5 @@
 " If you got this file off of the lab share, you will need to run
-" :PluginInstall! before my plugins become available. 
+" :PlugInstall! before my plugins become available. 
 """""""""""""""""
 " Basic options "
 """""""""""""""""
@@ -11,9 +11,12 @@ set softtabstop=4 " ...but, consider several spaces in a row to be tabs
 set autoindent    " Indent a new line the same amount as the line just typed
 if has("nvim")
 	set fcs=eob:\     " Make blank line indicator invisible whitespace
-endif
+end
 set mouse=n       " Resize buffers with the mouse, faster than the keyboard
-set background=light " Make neovim read colors correctly from pywal
+set background=dark " Make neovim read colors correctly from pywal
+set termguicolors
+set number 
+set relativenumber
 syntax enable     " Enable syntax highlighting
 
 """""""""""""""""""""""""""""
@@ -23,24 +26,29 @@ syntax enable     " Enable syntax highlighting
 au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 " THIS IS A TEST
 
-""""""""""
-" Vundle "
-""""""""""
+""""""""""""
+" Vim-Plug "
+""""""""""""
 filetype off 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/
-call vundle#begin()
+call plug#begin()
 " let Vundle manage Vundle (required)
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'VundleVim/Vundle.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 " Temporary(?) Plugins and their Justifications
 " Plugin 'ARM9/arm-syntax-vim' " (for CS 388 / Embedded Systems)
 
 " All plugins must be added before the following line 
-call vundle#end()
+call plug#end()
+colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='soft'
 let g:airline_powerline_fonts = 1 " Required to use Powerline glyphs in airline
+let g:airline_theme='gruvbox'
 filetype plugin indent on " allows auto-indenting depending on file type
 
 

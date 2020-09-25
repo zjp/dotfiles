@@ -1,0 +1,3 @@
+#+TITLE: Early Initialization
+#+begin_src emacs-lisp
+#+end_src
