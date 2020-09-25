@@ -1,4 +1,4 @@
-(load-file "~/dotfiles/spacemacs/spacemacs.el")
+(load-file "~/.config/emacsen/spacemacs.el")
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.

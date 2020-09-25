@@ -25,11 +25,6 @@ This one's gonna stay encrypted.
 *** GNU/Linux
 #+begin_src emacs-lisp
 (cond ((eq system-type 'gnu/linux)
-       (load-file "~/dotfiles/spacemacs/fira-ligs.el")
-       (when (or
-              (equal (car (symbol-value 'dotspacemacs-default-font)) "Fira Code")
-              (equal (car (symbol-value 'dotspacemacs-default-font)) "Fira Code Retina"))
-         (global-fira-code-mode))
        (use-package gruvbox-theme
          :load-path "~/git/emacs-theme-gruvbox/")
        (use-package atom-one-dark-theme

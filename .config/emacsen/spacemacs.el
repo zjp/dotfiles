@@ -43,8 +43,8 @@ values."
      pdf
      php
      (plantuml :variables
-               plantuml-jar-path "~/dotfiles/spacemacs/resources/plantuml.jar"
-               org-plantuml-jar-path "~/dotfiles/spacemacs/resources/plantuml.jar")
+               plantuml-jar-path "~/.config/emacsen/resources/plantuml.jar"
+               org-plantuml-jar-path "~/.config/emacsen/resources/plantuml.jar")
      python
      react
      semantic
@@ -107,7 +107,7 @@ values."
    dotspacemacs-elpa-subdirectory nil
    dotspacemacs-editing-style 'hybrid
    dotspacemacs-verbose-loading nil
-   dotspacemacs-startup-banner "~/dotfiles/spacemacs/resources/vilogopixel_small.png"
+   dotspacemacs-startup-banner "~/.config/emacsen/resources/vilogopixel_small.png"
    dotspacemacs-startup-lists '((todos . 5)
                                 (agenda . 5)
                                 (projects . 5)
@@ -177,7 +177,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (org-babel-load-file "~/dotfiles/spacemacs/spaceconfig-early.org"))
+  (org-babel-load-file "~/.config/emacsen/spaceconfig-early.org"))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -186,4 +186,4 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (org-babel-load-file "~/dotfiles/spacemacs/spaceconfig.org"))
+  (org-babel-load-file "~/.config/emacsen/spaceconfig.org"))
