@@ -44,6 +44,15 @@ export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
 export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 export GUILE_TLS_CERTIFICATE_DIRECTORY="/usr/local/etc/gnutls/"
 
+
+case `uname` in 
+	Darwin)
+		alias raudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
+		;;
+	Linux)
+		;;
+esac
+
 # Check for a Microsoft kernel (indicates WSLv2)
 if [ -n $MICROSOFT_KERNEL ]; then
 	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0 
