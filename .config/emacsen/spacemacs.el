@@ -55,7 +55,8 @@ values."
      slack
      syntax-checking
      gtags
-     treemacs
+     (treemacs :variables
+               treemacs-use-all-the-icons-theme t)
      version-control
      yaml
      )
@@ -67,12 +68,12 @@ values."
                                       edit-server
                                       exec-path-from-shell
                                       exwm
+                                      gnuplot-mode
+                                      gruvbox-theme
                                       hideshow-org
                                       mc-extras
                                       meson-mode
                                       minimap
-                                      gruvbox-theme
-                                      gnuplot-mode
                                       platformio-mode
                                       smart-tabs-mode
                                       smart-tab
@@ -115,8 +116,8 @@ values."
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-startup-buffer-show-version nil
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(gruvbox-dark-hard
-                         gruvbox-light-soft
+   dotspacemacs-themes '(gruvbox-light-soft
+                         gruvbox-dark-hard
                          spacemacs-dark
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
