@@ -60,3 +60,9 @@ esac
 #	export LIBGL_ALWAYS_INDIRECT=1
 #fi
 
+case `uname` in 
+	Linux)
+		keychain ~/.ssh/id_rsa
+		. ~/.keychain/memetoo-sh
+	;;
+esac
