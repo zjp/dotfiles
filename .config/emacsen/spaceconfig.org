@@ -532,14 +532,20 @@ I graduate is unlikely.
 
 *** HTML, CSS, JS, RJSX, etc
 #+begin_src emacs-lisp
-(defun zjp-rjsx-mode-hook ()
+(defun zjp-webdev-mode-hook ()
   (whitespace-mode)
-  (setq js-indent-level 2))
-(defun zjp-css-mode-hook ()
-  (whitespace-mode)
-  (setq css-indent-offset 2))
-(add-hook 'rjsx-mode-hook 'zjp-rjsx-mode-hook)
-(add-hook 'css-mode-hook 'zjp-css-mode-hook)
+  (setq css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq indent-tabs-mode nil))
+(defun zjp-turn-on-lsp-ui-hook ()
+  (lsp-mode)
+  (lsp-ui-mode))
+(add-hook 'rjsx-mode-hook 'zjp-webdev-mode-hook)
+(add-hook 'css-mode-hook 'zjp-webdev-mode-hook)
+(add-hook 'web-mode-hook 'zjp-webdev-mode-hook)
+(add-hook 'json-mode-hook 'zjp-webdev-mode-hook)
+(add-hook 'js2-mode-hook 'zjp-webdev-mode-hook)
+(add-hook 'js2-mode-hook 'zjp-turn-on-lsp-ui-hook)
 #+end_src
 * Utility Functions
 ** Kill whitespace from point to next word
