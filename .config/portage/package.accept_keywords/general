@@ -46,4 +46,5 @@ x11-libs/libdrm ~amd64
 app-office/ktimetracker ~amd64
 sys-apps/hwloc ~amd64
 dev-vcs/git ~amd64
+virtual/perl-libnet ~amd64
 x11-misc/picom **
