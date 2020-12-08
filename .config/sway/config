@@ -23,22 +23,24 @@ set $menu `rofi -no-lazy-grab -show drun -theme ~/.config/rofi/styles/normal_gri
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output DP-1 {
+output DP-2 {
 	resolution 2560x1440@143.964005Hz
 	position 0 0
-	background /home/zjp/Pictures/Wallpapers/morrobay.jpg fill
 }
 
-output HDMI-A-2 {
-	resolution 3840x2160@60Hz
+output DP-1 {
 	position 2560 0
-	background /home/zjp/Pictures/Wallpapers/sutrovivid.jpg fill
 }
 
 output VGA-1 {
 	resolution 1024x768@84.997002Hz
 	position 6400 0
-	background /home/zjp/Pictures/Wallpapers/sutrovivid.jpg fill
+}
+output HDMI-A-2 {
+	disable
+}
+output HDMI-A-3 {
+	disable
 }
 #
 # Example configuration:
