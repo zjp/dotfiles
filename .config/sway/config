@@ -213,7 +213,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
+input 5426:131:Razer_Razer_Basilisk_X_HyperSpeed {
+	scroll_factor 5
+}
+
+input 51984:4695:Keebio_Quefrency {
+	repeat_rate 25
+	repeat_delay 225
+}
+
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
@@ -235,4 +243,5 @@ bar {
 default_border none
 gaps inner 16
 gaps outer 0
+focus_follows_mouse no
 include /etc/sway/config.d/*
