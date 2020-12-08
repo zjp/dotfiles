@@ -79,7 +79,6 @@ values."
                                       minimap
                                       platformio-mode
                                       smart-tabs-mode
-                                      smart-tab
                                       )
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
@@ -181,7 +180,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (org-babel-load-file "~/.config/emacsen/spaceconfig-early.org"))
+  (with-eval-after-load 'org
+                        (org-babel-load-file "~/.config/emacsen/spaceconfig-early.org")))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -190,4 +190,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (org-babel-load-file "~/.config/emacsen/spaceconfig.org"))
+  (load-file "~/git/smart-tab/smart-tab.el")
+  (with-eval-after-load 'org
+    (org-babel-load-file "~/.config/emacsen/spaceconfig.org")))
