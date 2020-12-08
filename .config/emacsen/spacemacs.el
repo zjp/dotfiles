@@ -46,7 +46,9 @@ values."
      (plantuml :variables
                plantuml-jar-path "~/.config/emacsen/resources/plantuml.jar"
                org-plantuml-jar-path "~/.config/emacsen/resources/plantuml.jar")
-     python
+     (python :variables
+             python-backend 'lsp
+             python-lsp-server 'pyright)
      react
      semantic
      (shell :variables
