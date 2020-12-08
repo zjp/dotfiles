@@ -7,3 +7,7 @@ media-sound/spotify Spotify
 net-print/cnrdrvcups-lb Canon-UFR-II
 app-editors/vscode-bin MS-vscode
 media-fonts/corefonts MSttfEULA
+games-util/steam-launcher ValveSteamLicense
+>=dev-util/nvidia-cuda-toolkit-11.1.0 NVIDIA-CUDA
+# required by x11-drivers/nvidia-drivers (argument)
+x11-drivers/nvidia-drivers NVIDIA-r2
