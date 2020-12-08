@@ -34,22 +34,25 @@ This one's gonna stay encrypted.
        (require 'exec-path-from-shell)
        (exec-path-from-shell-initialize)
        (exec-path-from-shell-copy-env "SSH_AGENT_PID")
-       (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")))
+       (exec-path-from-shell-copy-env "SSH_AUTH_SOCK")
+       (setq conda-anaconda-home "/home/zjp/anaconda3/")
+       (setq conda-env-home-directory "/home/zjp/anaconda3/")))
 #+end_src
 *** MacOS
 There is a well known bug where starting Emacs from the dock, menu, Spotlight,
 etc. does not properly read the $PATH variable you'd get from running
 =echo $PATH= in your terminal.
 #+begin_src emacs-lisp
-    (cond
-      ((eq system-type 'darwin)
-        (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
-        (setq exec-path (append exec-path '("/usr/local/bin")))
-        (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin"))
-        (setq exec-path (append exec-path '("/Library/TeX/texbin")))
-        (setenv "PATH" (concat (getenv "PATH") ":/usr/local/Cellar/llvm/9.0.0_1/bin"))
-        (setq exec-path (append exec-path '("/usr/local/Cellar/llvm/9.0.0_1/bin")))
-        (setq inferior-lisp-program (executable-find "sbcl"))))
+(cond ((eq system-type 'darwin)
+       (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+       (setq exec-path (append exec-path '("/usr/local/bin")))
+       (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin"))
+       (setq exec-path (append exec-path '("/Library/TeX/texbin")))
+       (setenv "PATH" (concat (getenv "PATH") ":/usr/local/Cellar/llvm/9.0.0_1/bin"))
+       (setq exec-path (append exec-path '("/usr/local/Cellar/llvm/9.0.0_1/bin")))
+       (setq inferior-lisp-program (executable-find "sbcl"))
+       (setq conda-anaconda-home "/Users/zjp/anaconda3/")
+       (setq conda-env-home-directory "/Users/zjp/anaconda3/")))
 #+end_src
 ** Personal Information
 #+BEGIN_SRC emacs-lisp
