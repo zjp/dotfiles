@@ -55,7 +55,8 @@ case `uname` in
 esac
 
 # Check for a Microsoft kernel (indicates WSLv2)
-if [ -n $MICROSOFT_KERNEL ]; then
-	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0 
-	export LIBGL_ALWAYS_INDIRECT=1
-fi
+#if [ -n $MICROSOFT_KERNEL ]; then
+#	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0 
+#	export LIBGL_ALWAYS_INDIRECT=1
+#fi
+
