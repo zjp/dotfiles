@@ -40,7 +40,9 @@ values."
      (multiple-cursors :variables
                        multiple-cursors-backend 'mc)
      (org :variables
-          org-enable-github-support t)
+          org-enable-github-support t
+		  org-enable-reveal-js-support t)
+		  ;org-enable-jira-support t)
      pdf
      php
      (plantuml :variables
@@ -97,7 +99,7 @@ values."
                                                    :width normal
                                                    :powerline-scale 1.1)))
         ((eq system-type 'gnu/linux)
-         (setq-default dotspacemacs-default-font '("SF Mono"
+         (setq-default dotspacemacs-default-font '("Input Mono"
                                                    :size 16
                                                    :weight normal
                                                    :width normal
