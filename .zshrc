@@ -35,7 +35,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias vim=nvim
-export PATH="$PATH:${HOME}/.local/bin"
+export PATH="$PATH:${HOME}/.local/bin:${HOME}/git/neofetch"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
 
 # ???
