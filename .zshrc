@@ -47,6 +47,7 @@ export GUILE_TLS_CERTIFICATE_DIRECTORY="/usr/local/etc/gnutls/"
 
 case `uname` in 
 	Darwin)
+		# Sometimes the audio daemon on macOS just stops
 		alias raudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
 		;;
 	Linux)
