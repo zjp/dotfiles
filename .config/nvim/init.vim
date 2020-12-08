@@ -3,6 +3,7 @@
 """""""""""""""""
 " Basic options "
 """""""""""""""""
+set rtp+=/usr/share/vim/vimfiles/ " For Gentoo syntax highlighting 
 set number        " Turn on line numbers
 set tabstop=4     " number of columns occupied by a previously existing tab
 set shiftwidth=4  " number of columns occupied by a tab character
