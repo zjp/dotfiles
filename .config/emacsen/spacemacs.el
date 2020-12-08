@@ -119,9 +119,9 @@ values."
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-startup-buffer-show-version nil
    dotspacemacs-scratch-mode 'text-mode
-   dotspacemacs-themes '(gruvbox-light-soft
-                         gruvbox-dark-hard
                          spacemacs-dark
+   dotspacemacs-themes '(gruvbox-dark-hard
+                         gruvbox-light-soft
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-leader-key "SPC"
