@@ -10,8 +10,12 @@
                              (display-line-numbers-mode -1)))
 (add-hook 'treemacs-mode-hook (lambda ()
                                 (display-line-numbers-mode -1)))
+(add-hook 'fundamental-mode-hook (lambda ()
+									(display-line-numbers-mode -1)))
 (add-hook 'spacemacs-buffer-mode-hook (lambda ()
                                         (display-line-numbers-mode -1)))
+(add-hook 'magit-mode-hook (lambda ()
+                            (display-line-numbers-mode -1)))
 (add-hook 'term-mode-hook (lambda ()
                             (display-line-numbers-mode -1)))
 
@@ -612,6 +616,6 @@ Useful for vertical alignment.
 (treemacs)
 (treemacs--set-width 25)
 (treemacs-toggle-fixed-width)
-(with-eval-after-load 'org
-  (load-file "~/.emacs.d/elpa/develop/hideshow-org-20120223.2250/hideshow-org.el"))
+;(with-eval-after-load 'org
+;  (load-file "~/.emacs.d/elpa/develop/hideshow-org-20120223.2250/hideshow-org.el"))
 #+end_src
