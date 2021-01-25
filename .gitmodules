@@ -1,3 +1,6 @@
 [submodule ".config/emacs"]
 	path = .config/emacs
 	url = https://github.com/syl20bnr/spacemacs
+[submodule "/home/zjp/.local/share"]
+	path = /home/zjp/.local/share
+	url = git@192.168.1.217:local-shared.git
