@@ -11,3 +11,6 @@ games-util/steam-launcher ValveSteamLicense
 >=dev-util/nvidia-cuda-toolkit-11.1.0 NVIDIA-CUDA
 # required by x11-drivers/nvidia-drivers (argument)
 x11-drivers/nvidia-drivers NVIDIA-r2
+sci-chemistry/surf SURF
+sci-chemistry/vmd vmd
+sci-biology/stride STRIDE
