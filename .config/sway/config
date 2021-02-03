@@ -23,25 +23,15 @@ set $menu `rofi -no-lazy-grab -show drun` | swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output DP-2 {
+output DP-1 {
 	resolution 2560x1440@143.964005Hz
 	position 0 0
 }
 
-output DP-1 {
+output DP-2 {
 	position 2560 0
 }
 
-output VGA-1 {
-	resolution 1024x768@84.997002Hz
-	position 6400 0
-}
-output HDMI-A-2 {
-	disable
-}
-output HDMI-A-3 {
-	disable
-}
 #
 # Example configuration:
 #
