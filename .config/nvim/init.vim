@@ -3,7 +3,10 @@
 """""""""""""""""
 " Basic options "
 """""""""""""""""
-set rtp+=/usr/share/vim/vimfiles/ " For Gentoo syntax highlighting 
+let uname = system('uname -a')
+" if (we're not on WSL)
+" set rtp+=/usr/share/vim/vimfiles/ " For Gentoo syntax highlighting 
+" endif
 set number        " Turn on line numbers
 set tabstop=4     " number of columns occupied by a previously existing tab
 set shiftwidth=4  " number of columns occupied by a tab character
@@ -20,6 +23,8 @@ set number
 set relativenumber
 syntax enable     " Enable syntax highlighting
 
+set nocompatible
+filetype off
 """""""""""""""""""""""""""""
 " Filetype specific options "
 """""""""""""""""""""""""""""
@@ -32,24 +37,22 @@ au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 """"""""""""
 filetype off 
 " Set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/
-call plug#begin()
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin()
 " let Vundle manage Vundle (required)
-Plug 'VundleVim/Vundle.vim'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'morhetz/gruvbox'
 " Temporary(?) Plugins and their Justifications
 " Plugin 'ARM9/arm-syntax-vim' " (for CS 388 / Embedded Systems)
 
 " All plugins must be added before the following line 
-call plug#end()
+call vundle#end()
 colorscheme gruvbox
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='soft'
 let g:airline_powerline_fonts = 1 " Required to use Powerline glyphs in airline
 let g:airline_theme='gruvbox'
 filetype plugin indent on " allows auto-indenting depending on file type
-
-
