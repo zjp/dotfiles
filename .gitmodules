@@ -4,3 +4,6 @@
 [submodule "/home/zjp/.local/share"]
 	path = /home/zjp/.local/share
 	url = git@192.168.1.217:local-shared.git
+[submodule ".config/nvim/bundle"]
+	path = .config/nvim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim
