@@ -51,9 +51,10 @@ case `uname` in
 			# WSL
 			export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0 
 			export LIBGL_ALWAYS_INDIRECT=1
+			source ${HOME}/.keychain/zjp-windows-sh
 		else
 			# Linux
-			source ~/.keychain/memetoo-sh
+			source ${HOME}/.keychain/memetoo-sh
 		fi
 		;;
 esac
