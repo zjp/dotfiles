@@ -4,17 +4,11 @@ ZSH_THEME="robbyrussell"
 plugins=(git virtualenv)
 source $ZSH/oh-my-zsh.sh
 
-# export MANPATH="/usr/local/man:$MANPATH"
-# export LANG=en_US.UTF-8
-
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='vim'
 else
 	export EDITOR='nvim'
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -39,19 +33,17 @@ case `uname` in
 		export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
 		export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
 		export GUILE_TLS_CERTIFICATE_DIRECTORY="/usr/local/etc/gnutls/"
-		
 		# Sometimes the audio daemon on macOS just stops and this restarts it
 		alias raudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
 		alias reboot="launchctl reboot"
-		launchctl setenv SPACEMACSDIR /Users/zjp/.config/emacsen
 		;;
 	Linux)
 		keychain ~/.ssh/id_rsa
 		# Are we on WSLv2?
 		# https://stackoverflow.com/a/43618657
-		if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then 
+		if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
 			# WSL
-			export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0 
+			export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 			export LIBGL_ALWAYS_INDIRECT=1
 			source ${HOME}/.keychain/zjp-windows-sh
 		else
