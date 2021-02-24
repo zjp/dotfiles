@@ -31,6 +31,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export SPACEMACSDIR=${HOME}/.config/emacsen
 case `uname` in
 	Darwin)
 		# ???
@@ -41,10 +42,10 @@ case `uname` in
 		
 		# Sometimes the audio daemon on macOS just stops and this restarts it
 		alias raudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
+		launchctl setenv SPACEMACSDIR /Users/zjp/.config/emacsen
 		;;
 	Linux)
 		keychain ~/.ssh/id_rsa
-		export SPACEMACSDIR=${HOME}/.config/emacsen
 		# Are we on WSLv2?
 		# https://stackoverflow.com/a/43618657
 		if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then 
