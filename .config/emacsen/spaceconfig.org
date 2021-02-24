@@ -198,7 +198,7 @@ I'm an adult. If I don't want to run an action for every cursor, I won't make mo
 ** Use hippie-expand
 #+begin_src emacs-lisp
 (setq smart-tab-using-hippie-expand t)
-(global-smart-tab-mode)
+; (global-smart-tab-mode)
 #+end_src
 * Visuals
 ** Change date format
