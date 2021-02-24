@@ -44,7 +44,6 @@ values."
           org-enable-reveal-js-support t)
          ;org-enable-jira-support t)
      pdf
-     php
      (plantuml :variables
                plantuml-jar-path "~/.config/emacsen/resources/plantuml.jar"
                org-plantuml-jar-path "~/.config/emacsen/resources/plantuml.jar")
@@ -92,14 +91,16 @@ This function is called at the very startup of Spacemacs initialization
 before layers configuration.
 You should not put any user code in there besides modifying the variable
 values."
+  (setq zjp-font-macos "Cascadia Code")
+  (setq zjp-font-linux "Cascadia Code")
   (cond ((eq system-type 'darwin)
-         (setq-default dotspacemacs-default-font '("Input Mono Condensed Edu"
+         (setq-default dotspacemacs-default-font `(,zjp-font-macos
                                                    :size 14
                                                    :weight normal
                                                    :width normal
                                                    :powerline-scale 1.1)))
         ((eq system-type 'gnu/linux)
-         (setq-default dotspacemacs-default-font '("Input Mono Compressed"
+         (setq-default dotspacemacs-default-font `(,zjp-font-linux
                                                    :size 14
                                                    :weight normal
                                                    :width normal
@@ -190,7 +191,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (load-file "~/git/smart-tab/smart-tab.el")
   (with-eval-after-load 'org
     (org-babel-load-file "~/.config/emacsen/spaceconfig.org")))
 
