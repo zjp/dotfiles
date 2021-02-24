@@ -42,6 +42,7 @@ case `uname` in
 		
 		# Sometimes the audio daemon on macOS just stops and this restarts it
 		alias raudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
+		alias reboot="launchctl reboot"
 		launchctl setenv SPACEMACSDIR /Users/zjp/.config/emacsen
 		;;
 	Linux)
