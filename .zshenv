@@ -131,8 +131,11 @@ case `uname` in
 		# https://stackoverflow.com/a/43618657
 		if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
 			# WSL
+			export XDG_RUNTIME_DIR=/tmp/runtime-zjp/
 		else
 			# Linux
 		fi
+		keychain ~/.ssh/id_rsa
+		SPACEMACSDIR=/home/zjp/.config/emacsen
 		;;
 esac
