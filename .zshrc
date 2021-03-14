@@ -38,14 +38,15 @@ case `uname` in
 		alias reboot="launchctl reboot"
 		;;
 	Linux)
-		keychain ~/.ssh/id_rsa
 		# Are we on WSLv2?
 		# https://stackoverflow.com/a/43618657
 		if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
 			# WSL
 			export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 			export LIBGL_ALWAYS_INDIRECT=1
+			export $(dbus-launch)
 			source ${HOME}/.keychain/zjp-windows-sh
+			alias emacs="setsid emacs"
 		else
 			# Linux
 			source ${HOME}/.keychain/memetoo-sh
@@ -57,3 +58,5 @@ alias vim=nvim
 export PATH="$PATH:${HOME}/.local/bin:${HOME}/git/neofetch"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
 alias biblatex=biber
+
+conda activate
