@@ -42,7 +42,7 @@ case `uname` in
 		# https://stackoverflow.com/a/43618657
 		if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
 			# WSL
-			export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
+			export DISPLAY=$(dig zjp-windows | grep zjp-windows | awk '{print $5}' | tail -1):0.0
 			export LIBGL_ALWAYS_INDIRECT=1
 			export $(dbus-launch)
 			source ${HOME}/.keychain/zjp-windows-sh
