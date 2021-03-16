@@ -1,2 +1,3 @@
 .dotfiles.git
 .*_history
+.ssh
