@@ -48,3 +48,8 @@ sys-apps/hwloc ~amd64
 dev-vcs/git ~amd64
 virtual/perl-libnet ~amd64
 x11-misc/picom **
+app-misc/OpenRGB ~amd64
+sys-kernel/linux-firmware **
+media-libs/mesa ~amd64
+x11-drivers/xf86-video-amdgpu ~amd64
+gnome-base/gdm ~amd64
