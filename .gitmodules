@@ -1,9 +1,6 @@
 [submodule ".config/emacs"]
 	path = .config/emacs
 	url = https://github.com/syl20bnr/spacemacs
-[submodule ".config/nvim/bundle"]
-	path = .config/nvim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim
 [submodule ".config/nvim/bundle/Vundle.vim"]
 	path = .config/nvim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim
