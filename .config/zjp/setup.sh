@@ -34,3 +34,4 @@ dotfiles submodule update
 mkdir -p git/cloned-as-collaborator
 mkdir git/cloned-as-package
 mkdir git/personal
+mkdir lab
