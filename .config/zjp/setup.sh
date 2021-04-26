@@ -25,7 +25,7 @@ esac
 cd $HOME
 rsync -a zjp@homelab.lan:/home/zjp/.ssh/* .ssh/
 chmod 0600 $HOME/.ssh/id*
-git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME clone --bare git@github.com:zjp/dotfiles.git
+git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME clone --bare git@github.com:zjp/dotfiles.git .dotfiles.git
 git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout
 source .zshrc
 source .zshenv
