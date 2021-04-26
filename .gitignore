@@ -8,3 +8,17 @@
 .config/emacsen/spaceconfig-early.el
 # Symlink
 .config/neofetch/config.conf
+# Folders
+anaconda3/
+Desktop/
+Documents/
+Downloads/
+Movies/
+Music/
+Pictures/
+Public/
+# macOS-specific folders
+.DS_Store
+.CFUserTextEncoding
+Applications/
+Library/
