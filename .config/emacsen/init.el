@@ -62,6 +62,8 @@ values."
      (treemacs :variables
                treemacs-use-all-the-icons-theme t)
      version-control
+     (vue :variables
+          vue-backend 'lsp)
      yaml
      )
    dotspacemacs-additional-packages '(atom-one-dark-theme
