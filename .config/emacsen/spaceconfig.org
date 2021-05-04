@@ -451,7 +451,9 @@ subdirectory of any directory I use for class.
 LSP is not a language; however, for any language that has LSP these are the options I want.
 Since it's a minor mode intrinsically coupled to programming, it's appropriate to put it here.
 #+begin_src emacs-lisp
-(add-hook 'lsp-mode-hook #'(lambda () (electric-pair-mode -1)))
+(defun zjp-lsp-mode-hook ()
+  (electric-pair-mode -1))
+(add-hook 'lsp-mode-hook 'zjp-lsp-mode-hook)
 #+end_src
 *** Gentoo Ebuilds
 Ebuilds are written in shell, but that doesn't mean that I want this to be
