@@ -536,10 +536,13 @@ I graduate is unlikely.
 
 *** HTML, CSS, JS, RJSX, etc
 #+begin_src emacs-lisp
+(setq-default
+ web-mode-markup-indent-offset 2
+ web-mode-css-indent-offset 2
+ web-mode-code-indent-offset 2
+ web-mode-attr-indent-offset 2)
 (defun zjp-webdev-mode-hook ()
   (whitespace-mode)
-  (setq css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
   (setq indent-tabs-mode nil))
 (defun zjp-turn-on-lsp-ui-hook ()
   (lsp-mode)
@@ -549,6 +552,7 @@ I graduate is unlikely.
 (add-hook 'web-mode-hook 'zjp-webdev-mode-hook)
 (add-hook 'json-mode-hook 'zjp-webdev-mode-hook)
 (add-hook 'js2-mode-hook 'zjp-webdev-mode-hook)
+(add-hook 'vue-mode-hook 'zjp-webdev-mode-hook)
 (add-hook 'js2-mode-hook 'zjp-turn-on-lsp-ui-hook)
 #+end_src
 * Utility Functions
