@@ -50,9 +50,11 @@ Plugin 'morhetz/gruvbox'
 
 " All plugins must be added before the following line 
 call vundle#end()
-colorscheme gruvbox
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='soft'
+let g:gruvbox_italic = 1
+let g:gruvbox_italicize_comments = 1
 let g:airline_powerline_fonts = 1 " Required to use Powerline glyphs in airline
 let g:airline_theme='gruvbox'
+colorscheme gruvbox
 filetype plugin indent on " allows auto-indenting depending on file type
