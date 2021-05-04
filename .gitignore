@@ -20,5 +20,6 @@ Public/
 # macOS-specific folders
 .DS_Store
 .CFUserTextEncoding
+.Trash/
 Applications/
 Library/
