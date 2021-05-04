@@ -1,25 +1,6 @@
 * TODOs
 - 1 :: Only run =clang-format= on save if there's a .clang-format in project root
 * Bootstrapping
-#+begin_src emacs-lisp
-(add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode)))
-(set-face-bold-p 'bold nil)
-(global-display-line-numbers-mode)
-(add-hook 'vterm-mode-hook (lambda ()
-                             (setq-local global-hl-line-mode -1)
-                             (display-line-numbers-mode -1)))
-(add-hook 'treemacs-mode-hook (lambda ()
-                                (display-line-numbers-mode -1)))
-(add-hook 'fundamental-mode-hook (lambda ()
-									(display-line-numbers-mode -1)))
-(add-hook 'spacemacs-buffer-mode-hook (lambda ()
-                                        (display-line-numbers-mode -1)))
-(add-hook 'magit-mode-hook (lambda ()
-                            (display-line-numbers-mode -1)))
-(add-hook 'term-mode-hook (lambda ()
-                            (display-line-numbers-mode -1)))
-
-#+end_src
 ** Add Resources to Load Path
 *** authinfo
 This one's gonna stay encrypted.
@@ -198,7 +179,25 @@ I'm an adult. If I don't want to run an action for every cursor, I won't make mo
 ** Use hippie-expand
 #+begin_src emacs-lisp
 (setq smart-tab-using-hippie-expand t)
-; (global-smart-tab-mode)
+#+end_src
+** =display-line-numbers-mode=
+#+begin_src emacs-lisp
+(add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode)))
+(set-face-bold-p 'bold nil)
+(add-hook 'vterm-mode-hook (lambda ()
+                             (setq-local global-hl-line-mode -1)
+                             (display-line-numbers-mode -1)))
+(add-hook 'treemacs-mode-hook (lambda ()
+                                (display-line-numbers-mode -1)))
+(add-hook 'fundamental-mode-hook (lambda ()
+                                   (display-line-numbers-mode -1)))
+(add-hook 'spacemacs-buffer-mode-hook (lambda ()
+                                        (display-line-numbers-mode -1)))
+(add-hook 'magit-mode-hook (lambda ()
+                            (display-line-numbers-mode -1)))
+(add-hook 'term-mode-hook (lambda ()
+                            (display-line-numbers-mode -1)))
+
 #+end_src
 * Visuals
 ** Change date format
