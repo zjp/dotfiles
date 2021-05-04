@@ -272,44 +272,43 @@ the project's BDFL's style.
 Remember kids: Spaces are for fascists. You decide how whitespace looks on your
 machine, not me.
 #+BEGIN_SRC emacs-lisp
-  ;; How wide to render tabs
-  (setq my-tab-width 8)
+;; How wide to render tabs
+(setq my-tab-width 8)
 
-  ;; ;; Use smart tabs -- tabs: indentation; spaces: alignment
-  ;; (use-package smart-tabs-mode
-  ;;   :config
-  ;;   (smart-tabs-insinuate 'c 'c++ 'java 'javascript))
+;; ;; Use smart tabs -- tabs: indentation; spaces: alignment
+;; (use-package smart-tabs-mode
+;;   :config
+;;   (smart-tabs-insinuate 'c 'c++ 'java 'javascript))
 
-  ;; We want this to always be on except for languages that demand spaces
-  (setq-default indent-tabs-mode t)
-  (add-hook 'prog-mode-hook 'enable-tabs)
+;; We want this to always be on except for languages that demand spaces
+(setq-default indent-tabs-mode t)
+(add-hook 'prog-mode-hook 'enable-tabs)
 
-  ;; Hooks to enable or disable indent-tabs-mode
-  (defun disable-tabs ()
-    (setq indent-tabs-mode nil))
-  (defun enable-tabs ()
-    (setq indent-tabs-mode t)
-    (setq tab-width my-tab-width))
+;; Hooks to enable or disable indent-tabs-mode
+(defun disable-tabs ()
+  (setq indent-tabs-mode nil))
+(defun enable-tabs ()
+  (setq indent-tabs-mode t)
+  (setq tab-width my-tab-width))
 
-  ;; Disable tabs for languages that demand spaces
-  (add-hook 'lisp-mode-hook 'disable-tabs)
-  (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
-  (add-hook 'python-mode-hook 'disable-tabs)
+;; Disable tabs for languages that demand spaces
+(add-hook 'lisp-mode-hook 'disable-tabs)
+(add-hook 'emacs-lisp-mode-hook 'disable-tabs)
+(add-hook 'python-mode-hook 'disable-tabs)
 
-  ;; Delete entire tabs instead of spaces
-  (setq backward-delete-char-untabify-method 'hungry)
+;; Delete entire tabs instead of spaces
+(setq backward-delete-char-untabify-method 'hungry)
 
-  ;; Mark tabs but not trailing whitespace since we cull it on each save
-  (setq whitespace-style '(face tabs tab-mark))
+;; Mark tabs but not trailing whitespace since we cull it on each save
+(setq whitespace-style '(face tabs tab-mark))
 
-  ;; Render tabs with a pipe "|"
-  (setq whitespace-display-mappings
-   '((tab-mark 9 [124 9] [92 9])))
+;; Render tabs with a pipe "|"
+(setq whitespace-display-mappings
+ '((tab-mark 9 [124 9] [92 9])))
 
-  ;; Always show whitespace
-  (global-whitespace-mode)
+;; Always show whitespace
+(global-whitespace-mode)
 #+END_SRC
-
 *** Don't ask about auto-insertion
 #+begin_src emacs-lisp
 (setq auto-insert-query nil)
