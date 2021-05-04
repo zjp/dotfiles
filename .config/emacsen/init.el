@@ -211,7 +211,6 @@ This function is called at the very end of Spacemacs initialization."
  '(create-lockfiles nil)
  '(custom-safe-themes
    '("123a8dabd1a0eff6e0c48a03dc6fb2c5e03ebc7062ba531543dfbce587e86f2a" "939ea070fb0141cd035608b2baabc4bd50d8ecc86af8528df9d41f4d83664c6a" "a06658a45f043cd95549d6845454ad1c1d6e24a99271676ae56157619952394a" "e1d09f1b2afc2fed6feb1d672be5ec6ae61f84e058cb757689edb669be926896" default))
- '(display-line-numbers 'relative)
  '(display-line-numbers-type 'relative)
  '(doom-themes-treemacs-theme "doom-colors")
  '(ein:output-area-inlined-images t)
