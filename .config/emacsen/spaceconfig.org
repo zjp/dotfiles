@@ -611,10 +611,13 @@ Useful for vertical alignment.
 (global-set-key (kbd "C-x t c") 'tab-close)
 
 
-(global-set-key (kbd "C-s-r") 'remove-dotfiles-args)
-(global-set-key (kbd "C-s-d") 'dotfiles-magit-status)
+(global-set-key (kbd "C-s-x r") 'remove-dotfiles-args)
+(global-set-key (kbd "C-s-x d") 'dotfiles-magit-status)
 #+end_src
-
+** =whack-whitespace=
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-s-d") 'whack-whitespace)
+#+end_src
 * Modes
 #+begin_src emacs-lisp
 ;; Compiling hs-org is not working, so manually load it
