@@ -27,6 +27,7 @@ rsync -a zjp@homelab.lan:/home/zjp/.ssh/* .ssh/
 chmod 0600 $HOME/.ssh/id*
 git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME clone --bare git@github.com:zjp/dotfiles.git .dotfiles.git
 git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME checkout
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 source .zshrc
 source .zshenv
 dotfiles submodule init
@@ -35,3 +36,4 @@ mkdir -p git/cloned-as-collaborator
 mkdir git/cloned-as-package
 mkdir git/personal
 mkdir lab
+ln -s ${HOME}/.config/zjp/zjp.zsh-theme ${HOME}/.oh-my-zsh/custom/themes
