@@ -136,6 +136,6 @@ case `uname` in
 			# Linux
 		fi
 		keychain ~/.ssh/id_rsa
-		SPACEMACSDIR=/home/zjp/.config/emacsen
+		export SPACEMACSDIR=/home/zjp/.config/emacsen
 		;;
 esac
