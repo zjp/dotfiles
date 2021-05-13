@@ -20,12 +20,12 @@ distro (should it ever die) I'm leaving them up as a point of pride.
 
 ### But you don't HAVE to give them up -- THAT'S THE POINT OF GIT!
 I hear you, but the cost of not having to deal with git in this instance is very
-cheap -- around 100 kilobytes of text.
+cheap -- a few hundred kilobytes of text.
 
 ```
 $ cd ~/.config/portage
-$ cat */*/* | wc -c
-87134
+$ du -h | tail -n 1
+192K   .
 ```
 
 ### So what do you use now?
