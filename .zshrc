@@ -36,6 +36,7 @@ case `uname` in
 		# Sometimes the audio daemon on macOS just stops and this restarts it
 		alias raudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
 		alias reboot="launchctl reboot"
+		alias zathura="/usr/local/opt/util-linux/bin/setsid zathura"
 		;;
 	Linux)
 		# Are we on WSLv2?
