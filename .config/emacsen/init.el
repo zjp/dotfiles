@@ -30,6 +30,8 @@ values."
      html
      ipython-notebook
      javascript
+     (julia :variables
+            julia-backend 'lsp)
      (lsp :variables
           lsp-ui-doc-enable t
           lsp-ui-doc-include-signature t
