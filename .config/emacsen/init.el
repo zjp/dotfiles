@@ -46,6 +46,7 @@ values."
           org-enable-reveal-js-support t)
          ;org-enable-jira-support t)
      pdf
+     php
      (plantuml :variables
                plantuml-jar-path "~/.config/emacsen/resources/plantuml.jar"
                org-plantuml-jar-path "~/.config/emacsen/resources/plantuml.jar")
