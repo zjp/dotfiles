@@ -124,7 +124,6 @@ fi
 case `uname` in
 	Darwin)
 		export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig/:$PKG_CONFIG_PATH
-		launchctl setenv SPACEMACSDIR /Users/zjp/.config/emacsen
 		;;
 	Linux)
 		# Are we on WSLv2?
