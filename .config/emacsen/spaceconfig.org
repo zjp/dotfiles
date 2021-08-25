@@ -327,24 +327,26 @@ save right before we close the buffer.
 
 (advice-add 'save-buffer :before #'always-run-clang-format)
 #+end_src
-** University Programming Preferences
-These are options that are only set because I have to due to class. They will
-likely be disabled or removed altogether upon graduation. The regex looks
-complex, but really all it does is ensure that these only trigger if I'm in a
-subdirectory of any directory I use for class.
-*** Standard Doxygen Header
+** Auto-Inserts
+The regex looks complex, but really all it does is ensure that these only trigger if
+I'm in a subdirectory of any directory I use for work.
+*** ChimeraX Python Copyright Header
 #+begin_src emacs-lisp
   (eval-after-load 'autoinsert
     '(define-auto-insert
-       '("\\(\\(\\[EECS\\|eecs\\|EECS...\\|eecs...\\|\\]\\).*\\(\\.\\[CC?\\|cc\\|cxx\\|cpp\\|c\\+\\+\\|]\\'\\)\\)" . "C++ Skeleton")
+       '("\\(\\(ChimeraX\\).*\\(\\.\\(py\\)\\)\\)" . "ChimeraX Skeleton")
        '("Short description: "
-         "// -*- C++ -*-" ?\n
-         "/**" ?\n
-         "* @author " (insert (user-full-name)) ?\n
-         "* @file   " (file-name-nondirectory (buffer-file-name)) ?\n
-         "* @date   " (insert (format-time-string "%d %B %Y")) ?\n
-         "* @brief  " ?\n
-         "*/" > ?\n ?\n )))
+         "# vim: set expandtab shiftwidth=4 softtabstop=4:" ?\n ?\n
+         "# === UCSF ChimeraX Copyright ===" ?\n
+         "# Copyright " (insert (format-time-string "%Y")) " Regents of the University of California." ?\n
+         "# All rights reserved. This software provided pursuant to a" ?\n
+         "# license agreement containing restrictions on its disclosure," ?\n
+         "# duplication and use. For details see:" ?\n
+         "# http://www.rbvi.ucsf.edu/chimerax/docs/licensing.html" ?\n
+         "# This notice must be embedded in or attached to app copies," ?\n
+         "# including partial copies, of the software or any revisions" ?\n
+         "# or derivations thereof." ?\n
+         "# === UCSF ChimeraX Copyright ===" > ?\n ?\n )))
 #+end_src
 *** Header Autoinsert
 #+begin_src emacs-lisp
