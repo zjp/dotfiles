@@ -1,6 +1,7 @@
 [user]
 	email = zach@zjp.codes
 	name = Zach Pearson
+	signingkey = 9BA7581D07E46B4C
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -10,3 +11,5 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+[commit]
+	gpgsign = true
