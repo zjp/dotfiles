@@ -7,3 +7,6 @@
 [submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
 	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "git/cloned-as-package/emacs"]
+	path = git/cloned-as-package/emacs
+	url = https://git.savannah.gnu.org/git/emacs.git
