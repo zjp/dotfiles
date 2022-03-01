@@ -38,7 +38,7 @@ au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
 filetype off 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.config/nvim/bundle')
 " let Vundle manage Vundle (required)
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
