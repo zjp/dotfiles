@@ -1,8 +1,11 @@
 (cat ~/.cache/wal/sequences)
 export ZSH="${HOME}/.oh-my-zsh"
 ZSH_THEME="zjp"
-plugins=(git virtualenv)
+plugins=(git virtualenv keychain gpg-agent)
+zstyle :omz:plugins:keychain agents ssh,gpg
+zstyle :omz:plugins:keychain identities id_rsa 
 source $ZSH/oh-my-zsh.sh
+export VIRTUAL_ENV_DISABLE_PROMPT=0
 
 if [[ -n $SSH_CONNECTION ]]; then
 	export EDITOR='vim'
@@ -13,6 +16,17 @@ fi
 export SPACEMACSDIR=${HOME}/.config/emacsen
 case `uname` in
 	Darwin)
+		case `arch` in
+			arm64)
+				HOMEBREW_PREFIX=/opt/homebrew
+			;;
+			x86_64)
+				HOMEBREW_PREFIX=/usr/local
+			;;
+		esac
+		HOMEBREW_BIN=$HOMEBREW_PREFIX/bin
+		export PATH=$HOMEBREW_BIN:$PATH
+		[ -e $HOMEBREW_BIN/gls ] && alias ls="gls --color --group-directories-first"
 		# ???
 		export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
 		export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
@@ -21,7 +35,15 @@ case `uname` in
 		# Sometimes the audio daemon on macOS just stops and this restarts it
 		alias raudio="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
 		alias reboot="launchctl reboot"
-		alias zathura="/usr/local/opt/util-linux/bin/setsid zathura"
+		[ `command -v setsid` ] && alias zathura="${HOMEBREW_PREFIX}/opt/util-linux/bin/setsid zathura"
+		PATH="/Users/zjp/perl5/bin${PATH:+:${PATH}}"; export PATH;
+		PERL5LIB="/Users/zjp/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+		PERL_LOCAL_LIB_ROOT="/Users/zjp/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+		PERL_MB_OPT="--install_base \"/Users/zjp/perl5\""; export PERL_MB_OPT;
+		PERL_MM_OPT="INSTALL_BASE=/Users/zjp/perl5"; export PERL_MM_OPT;
+		# Swagger-Codegen for RBVI
+		export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+		export PATH=${JAVA_HOME}/bin:$PATH
 		;;
 	Linux)
 		# Are we on WSLv2?
@@ -34,11 +56,22 @@ case `uname` in
 			# Linux
 			source ${HOME}/.keychain/memetoo-sh
 		fi
+		alias ls="ls --color --group-directories-first"
 		;;
 esac
 
-alias vim=nvim
+[ `command -v nvim` ] && alias vim=nvim
+[ `command -v biber` ] && alias biblatex=biber
 export PATH="$PATH:${HOME}/.local/bin:${HOME}/git/neofetch"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
-alias biblatex=biber
-
+alias dotfiles="git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
+# Make the dotfiles alias act like the regular git command
+# https://stackoverflow.com/a/41872586
+compdef dotfiles=git
+# https://stackoverflow.com/a/17589263
+compdef _files dotfiles
+# https://stackoverflow.com/a/41872586
+setopt complete_aliases
+alias cdrbvi="cd ~/git/rbvi"
+alias rgf="rg -l"
+alias dirsize="du -h -d 1 | tail -n 1"
+export PIPENV_VENV_IN_PROJECT="enabled"
