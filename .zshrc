@@ -74,4 +74,5 @@ setopt complete_aliases
 alias cdrbvi="cd ~/git/rbvi"
 alias rgf="rg -l"
 alias dirsize="du -h -d 1 | tail -n 1"
+alias gspp="git stash && git pull && git stash pop"
 export PIPENV_VENV_IN_PROJECT="enabled"
