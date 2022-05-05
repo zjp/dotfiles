@@ -309,6 +309,10 @@ machine, not me.
 ;; Always show whitespace
 (global-whitespace-mode)
 #+END_SRC
+*** Turn on auto-insert mode
+#+begin_src emacs-lisp
+(auto-insert-mode t)
+#+end_src
 *** Don't ask about auto-insertion
 #+begin_src emacs-lisp
 (setq auto-insert-query nil)
