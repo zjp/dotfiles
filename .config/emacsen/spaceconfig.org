@@ -347,7 +347,7 @@ I'm in a subdirectory of any directory I use for work.
          "# license agreement containing restrictions on its disclosure," ?\n
          "# duplication and use. For details see:" ?\n
          "# http://www.rbvi.ucsf.edu/chimerax/docs/licensing.html" ?\n
-         "# This notice must be embedded in or attached to app copies," ?\n
+         "# This notice must be embedded in or attached to all copies," ?\n
          "# including partial copies, of the software or any revisions" ?\n
          "# or derivations thereof." ?\n
          "# === UCSF ChimeraX Copyright ===" > ?\n ?\n )))
