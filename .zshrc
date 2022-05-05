@@ -76,3 +76,22 @@ alias rgf="rg -l"
 alias dirsize="du -h -d 1 | tail -n 1"
 alias gspp="git stash && git pull && git stash pop"
 export PIPENV_VENV_IN_PROJECT="enabled"
+
+# TODO: is opt/anaconda3 portable? brew has opt on arm and /usr/local on x64
+if [ -e ~/opt/anaconda3 ]; then
+	# >>> conda initialize >>>
+	# !! Contents within this block are managed by 'conda init' !!
+	__conda_setup="$('/Users/zjp/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+	if [ $? -eq 0 ]; then
+	    eval "$__conda_setup"
+	else
+	    if [ -f "/Users/zjp/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+	        . "/Users/zjp/opt/anaconda3/etc/profile.d/conda.sh"
+	    else
+	        export PATH="/Users/zjp/opt/anaconda3/bin:$PATH"
+	    fi
+	fi
+	unset __conda_setup
+	# <<< conda initialize <<<
+	conda deactivate # Don't turn conda on by default...
+fi 
