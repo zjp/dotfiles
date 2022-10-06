@@ -1,10 +1,39 @@
-(cat ~/.cache/wal/sequences)
-export ZSH="${HOME}/.oh-my-zsh"
-ZSH_THEME="zjp"
-plugins=(git virtualenv keychain gpg-agent)
-zstyle :omz:plugins:keychain agents ssh,gpg
-zstyle :omz:plugins:keychain identities id_rsa 
-source $ZSH/oh-my-zsh.sh
+OS=`uname -o 2>/dev/null`
+if [ ! $? -eq 0 ]; then
+	# Pick up Linux and Darwin on old versions
+	OS=`uname -s`
+fi
+ARCH=`arch`
+
+case $OS in
+	Msys | Cygwin)
+		# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+		# Initialization code that may require console input (password prompts, [y/n]
+		# confirmations, etc.) must go above this block; everything else may go below.
+		if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+			source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+		fi
+		source ~/powerlevel10k/powerlevel10k.zsh-theme
+		# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+		[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+		autoload -U compinit
+		compinit
+		export PATH="$(/usr/bin/cygpath -u "C:\Program Files (x86)\GnuPG\bin"):$PATH"
+		export GPG_TTY=$TTY
+		eval $(ssh-agent) 2>/dev/null 1>/dev/null
+		;;
+	Darwin | Linux | GNU\/Linux)
+		# Prefer oh-my-zsh on *nixes
+		export ZSH="${HOME}/.oh-my-zsh"
+		ZSH_THEME="zjp"
+		plugins=(git virtualenv keychain gpg-agent)
+		zstyle :omz:plugins:keychain agents ssh,gpg
+		zstyle :omz:plugins:keychain identities id_rsa
+		source $ZSH/oh-my-zsh.sh
+		;;
+	# TODO: *BSD
+esac
+
 export VIRTUAL_ENV_DISABLE_PROMPT=0
 
 if [[ -n $SSH_CONNECTION ]]; then
@@ -14,9 +43,10 @@ else
 fi
 
 export SPACEMACSDIR=${HOME}/.config/emacsen
-case `uname` in
+
+case $OS in
 	Darwin)
-		case `arch` in
+		case $ARCH in
 			arm64)
 				HOMEBREW_PREFIX=/opt/homebrew
 			;;
@@ -45,7 +75,7 @@ case `uname` in
 		export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 		export PATH=${JAVA_HOME}/bin:$PATH
 		;;
-	Linux)
+	GNU\/Linux | Linux)
 		# Are we on WSLv2?
 		# https://stackoverflow.com/a/43618657
 		if grep -qEi "(Microsoft|WSL)" /proc/version &> /dev/null ; then
@@ -57,6 +87,8 @@ case `uname` in
 			source ${HOME}/.keychain/memetoo-sh
 		fi
 		alias ls="ls --color --group-directories-first"
+		;;
+	Msys | Cygwin)
 		;;
 esac
 

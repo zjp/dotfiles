@@ -1,4 +1,4 @@
-case `uname` in
+case `/usr/bin/uname -o` in
 	Darwin)
 		export PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig/:$PKG_CONFIG_PATH
 		;;
@@ -13,5 +13,7 @@ case `uname` in
 		fi
 		keychain ~/.ssh/id_rsa
 		export SPACEMACSDIR=/home/zjp/.config/emacsen
+		;;
+	Msys | Cygwin)
 		;;
 esac
