@@ -23,6 +23,7 @@ case $OS in
 		eval $(ssh-agent) 2>/dev/null 1>/dev/null
 		;;
 	Darwin | Linux | GNU\/Linux)
+		(cat ~/.cache/wal/sequences)
 		# Prefer oh-my-zsh on *nixes
 		export ZSH="${HOME}/.oh-my-zsh"
 		ZSH_THEME="zjp"
