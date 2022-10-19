@@ -14,3 +14,4 @@ x11-drivers/nvidia-drivers NVIDIA-r2
 sci-chemistry/surf SURF
 sci-chemistry/vmd vmd
 sci-biology/stride STRIDE
+dev-util/pycharm-professional PyCharm PyCharm_Preview PyCharm_Academic PyCharm_OpenSource PyCharm_Classroom

@@ -1,6 +1,6 @@
 sys-fs/exfatprogs ~amd64
 sys-kernel/gentoo-sources ~amd64
-net-im/discord-bin ~amd64
+net-im/discord-bin **
 app-text/poppler ~amd64
 media-sound/spotify ~amd64
 gui-apps/waybar ~amd64
@@ -46,7 +46,6 @@ x11-libs/libdrm ~amd64
 app-office/ktimetracker ~amd64
 sys-apps/hwloc ~amd64
 dev-vcs/git ~amd64
-virtual/perl-libnet ~amd64
 x11-misc/picom **
 app-misc/OpenRGB ~amd64
 sys-kernel/linux-firmware **
